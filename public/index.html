@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NetBramha - UI Frontend Developer Assignment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/index.css?version=1.4" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+
+<body>
+    <div class="wrapper desktop" id="appWrapper">
+
+        <aside class="sidenav" id="sideNav">
+            <div id="closeSideNav" class="d-none">
+                <button type="button" class="btn btn-primary shadow-sm rounded-3 border-0 btn-sm">
+                    <i class="fas fa-angle-double-left"></i>
+                </button>
+            </div>
+            <div class="logo">
+                <img src="./assets/img/netbramha 1.png" alt="logo" />
+            </div>
+
+            <ul class="side-menu">
+                <li class="menu-item-list dropdown active">
+                    <div class="item-1">
+                        <img src="./assets/icons/overview.svg" class="me-2" alt="Overview" />
+                        <span>Overview</span>
+                        <img src="./assets/icons/arrow-up.svg" class="mx-2 arrow-img" alt="Angle arrow up" />
+                    </div>
+                    <ul class="dropdown-options">
+                        <div class="line"></div>
+                        <li><a href="#scoreReport" class="active">Score & Report</a></li>
+                        <li><a href="#summary">Summary</a></li>
+                        <li><a href="#history">History</a></li>
+                        <li><a href="#whereyoustand">Where You Stand</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-list"><img src="./assets/icons/report.svg" alt="Your Report" /><span>Your
+                        Report</span></li>
+                <li class="menu-item-list position-relative"><img src="./assets/icons/alerts.svg"
+                        alt="Alerts" /><span>Alerts</span>
+                    <div class="alerts-notify">4</div>
+                </li>
+                <li class="menu-item-list"><img src="./assets/icons/simulator.svg"
+                        alt="Simulator" /><span>Simulator</span></li>
+                <li class="menu-item-list"><img src="./assets/icons/education.svg"
+                        alt="Education" /><span>Education</span></li>
+                <li class="menu-item-list"><img src="./assets/icons/upgrade.svg" alt="Upgrade My Plan" /><span>Upgrade
+                        My Plan</span></li>
+                <li class="menu-item-list"><img src="./assets/icons/reward.svg" alt="Rewards Program" /><span>Rewards
+                        Program</span></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <button type="button" class="side-nav-toggle" id="toggleNav">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="nav-items">
+                    <button type="button" id="howitworks" class="btn btn-link text-dark nav-button">
+                        <img class="me-1" src="./assets/icons/question.svg" alt="How it works" /> <span>How it works</span>
+                    </button>
+
+                    <div class="dropdown nav-button" id="english">
+                        <button class="btn btn-link text-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <img class="me-1" src="./assets/icons/Language.svg" alt="Language" /> <span>English</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Telugu</a></li>
+                        </ul>
+                    </div>
+
+                    <button type="button" id="account" class="btn btn-link text-dark nav-button">
+                        <img class="me-1" src="./assets/icons/profile.svg" alt="Account" /> <span>Account</span>
+                    </button>
+                    <button type="button" id="logout" class="btn btn-link text-dark nav-button">
+                        <img class="me-1" src="./assets/icons/logout.svg" alt="Logout" /> <span>Logout</span>
+                    </button>
+                </div>
+            </header>
+            <div class="container-fluid">
+                <div class="row g-3" id="scoreReport">
+                    <div class="bg-rectangle"></div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-5">
+                        <div class="card shadow-lg border-0 rounded-3">
+                            <div class="card-body text-center bx-shadow">
+                                <h5>Hello, Varadaa.</h5>
+                                <div class="gauge-score position-relative mb-4 mt-1">
+                                    <div class="score-range-one text-light fw-bold fa-12 from">300</div>
+                                    <div class="score-range-one text-light fw-bold fa-12 to">900</div>
+                                    <canvas id="gauge-nb-score"></canvas>
+                                    <!-- <img src="./assets/img/Group 27024.png style="width: 100%; height: 200px; object-fit: contain;" alt=""> -->
+                                </div>
+                                <h1 class="text-center fw-bold bnscoreGuage"></h1>
+                                <div>is your <span class="text-primary-300">NB</span> Score as of 19th Apr ‘22</div>
+                            </div>
+                            <div class="card-footer border-0 rounded-3 py-4 bg-white text-center">
+                                <button class="btn btn-link btn-sm px-4 text-primary justify-self-start">Score Analysis</button>
+                                <button class="btn btn-warning px-5 rounded-pill btn-md">Refresh Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-7">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="card rounded-3 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <div class="row g-1">
+                                            <div class="col-12 col-sm-9 col-md-9">
+                                                <div class="text-primary-300 fw-bold">NB REPORT</div>
+                                                <div class="text-dark fa-18">Get your personalized NB Report to plan
+                                                    your
+                                                    financial
+                                                    future.</div>
+                                            </div>
+                                            <div class="col-12 col-sm-3 col-md-3 text-md-center">
+                                                <img src="./assets/img/image 7624.png" alt="file" />
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <button
+                                                class="btn btn-link btn-sm text-primary d-flex text-start justify-content-start gap-2">
+                                                <img src="./assets/icons/eye.svg" alt="eye" />
+                                                <span>View Your NB Report</span>
+                                                <i class="fas fa-angle-right"></i>
+                                            </button>
+                                            <button
+                                                class="btn btn-link btn-sm text-primary d-flex text-start justify-content-start gap-2">
+                                                <img src="./assets/icons/file-download.svg" alt="file download" />
+                                                <span>Download Your NB Report with summary</span>
+                                                <i class="fas fa-angle-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card rounded-3 border-0 bg-light-yellow shadow-sm">
+                                    <div class="card-body">
+                                        <div class="row g-1">
+                                            <div
+                                                class="col-12 col-sm-7 col-md-6 col-xl-8 d-flex align-items-center justify-content-start">
+                                                <div class="text-dark fa-16">You currently have an active subscription.
+                                                    You will be able to access Free Annual NB Score & Report after the
+                                                    subscription period expires.</div>
+                                            </div>
+                                            <div class="col-12 col-sm-3 col-md-3 col-xl-3 text-center ">
+                                                <img src="./assets/img/Settled Credit.png" alt="file" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3 pt-5" id="summary">
+                    <div class="col-12 col-md-6 col-lg-8">
+                        <div class="card shadow-sm border-top-blue rounded-3">
+                            <div class="card-header nav-header bg-white border-0">
+                                <h6 class="text-primary fw-bold">Your Accounts <img class="icon"
+                                        src="./assets/icons/i.svg" alt=""></h6>
+                                <div class="account-buttons tab-buttons">
+                                    <button type="button" data-tab="all"
+                                        class="btn border-0 px-3 active btn-sm shadow-none">All</button>
+                                    <button type="button" data-tab="open"
+                                        class="btn border-0 px-3 btn-sm shadow-none">Open</button>
+                                    <button type="button" data-tab="close"
+                                        class="btn border-0 px-3 btn-sm shadow-none">Close</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row g-2">
+                                    <div
+                                        class="col-12 col-md-12 col-lg-6 d-flex align-items-center justify-content-center">
+                                        <div class="donut-chart"><canvas id="donutChart"></canvas></div>
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-6">
+                                        <div class="legend-section" id="legendSection"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="card position-relative shadow-sm border-top-blue rounded-3 border-0">
+                                    <div class="icon-total-account">
+                                        <img src="./assets/icons/disputes.svg" alt="" />
+                                    </div>
+                                    <div class="card-body" style="margin-left: 45px;">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="text-primary fa-16 fw-bold">Total Disputes</div>
+                                            <div class="text-dark fw-bold">12</div>
+                                        </div>
+                                        <div>Learn more about credit reporting and related policies.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card position-relative shadow-sm border-top-blue rounded-3 border-0">
+                                    <div class="icon-total-account">
+                                        <img src="./assets/icons/file-search.svg" alt="" />
+                                    </div>
+                                    <div class="card-body" style="margin-left: 45px;">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="text-primary fa-16 fw-bold">Total Enquries</div>
+                                            <div class="text-dark fw-bold">05</div>
+                                        </div>
+                                        <div>(In last 3 years)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3 pt-5" id="history">
+                    <div class="col-12">
+                        <h6 class="text-primary fw-bold">NB SCORE HISTORY <img class="icon" src="./assets/icons/i.svg"
+                                alt=""></h6>
+                        <div class="card bg-light border-0 shadow-sm rounded-3">
+                            <div class="card-body">
+                                <div>Trended view of the changes in your NB Score with every refresh.</div>
+                                <div class="row g-2">
+                                    <div class="col-12 col-md-12 col-lg-8">
+                                        <div class="line-account-canvas mt-3">
+                                            <canvas style="width: 100%;" id="lineAccountCanvas"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-4">
+                                        <div class="card shadow-none border-0 shadow-sm rounded-3">
+                                            <div class="card-body"
+                                                style="width: 100%; height: 300px; overflow: scroll;">
+                                                <table class="table">
+                                                    <tr>
+                                                        <th colspan="3">August 2022</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="normal">
+                                                            <img src="./assets/icons/rise-arrow.svg" alt="">
+                                                        </th>
+                                                        <th>
+                                                            <span>493</span>
+                                                        </th>
+                                                        <td>18/08/2022</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="normal">
+                                                            <img src="./assets/icons/downfall-arrow.svg" alt="">
+                                                        </th>
+                                                        <th><span>490</span></th>
+                                                        <td>16/08/2022</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="normal">
+                                                            <img src="./assets/icons/rise-arrow.svg" alt="">
+                                                        </th>
+                                                        <th>
+                                                            <span>510</span>
+                                                        </th>
+                                                        <td>14/08/2022</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="normal">
+                                                            <img src="./assets/icons/right-arrow.svg" alt="">
+                                                        </th>
+                                                        <th>
+                                                            <span>509</span>
+                                                        </th>
+                                                        <td>12/08/2022</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="normal">
+                                                            <span class="text-light">N/H</span>
+                                                        </th>
+                                                        <th><span>509</span></th>
+                                                        <td>12/08/2022</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3 pt-5" id="whereyoustand">
+                    <div class="col-12">
+                        <h4 class="text-primary fw-bold">WHERE YOU STAND <img class="icon" src="./assets/icons/i.svg"
+                                alt=""></h4>
+                        <div class="card bg-light shadow-sm border-0 rounded-3">
+                            <div class="card-body text-center">
+                                <div class="card px-4 py-4 shadow-sm border-0 rounded-3">
+                                    <div class="p-2 card-body">
+                                        <div class="linear-gauge"></div>
+                                        <div class="text-center mt-4">
+                                            <h5>Your NB Score</h5>
+                                            <h1 class="fw-bold nbScore">767</h1>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-white pb-0 pt-4">
+                                        <div>
+                                            <div class="score-range"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <div class="fa-16">Your NB Score lies in the top 70% in All Of India.</div>
+                                    <div class="fa-14">Based on the NB Data</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="text-center footer-section mt-5">
+                    <div class="fa-14 pt-3">© Copyright 2025 NetBramha Studio LLP. All Rights Reserved.</div>
+                    <div class="footer-items pt-1">
+                        <div>
+                            <a href="#" class="text-dark fa-14">FAQs</a>
+                        </div>
+                        <div>
+                            <a href="#" class="text-dark fa-14">Terms and Conditions</a>
+                        </div>
+                        <div>
+                            <a href="#" class="text-dark fa-14">Privacy Policy</a>
+                        </div>
+                        <div>
+                            <a href="#" class="text-dark fa-14">Raise a Dispute</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </main>
+    </div>
+ 
+    <script src="./assets/js/toggle.js?version=1.4"></script>
+    <script src="./assets/js/index.js?version=1.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

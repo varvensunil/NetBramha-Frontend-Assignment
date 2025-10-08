@@ -1,0 +1,45 @@
+{
+  "creditRange": {
+    "from": 300,
+    "to": 900
+  },
+  "accounts": {
+    "all": {
+      "labels": ["Closed Credit Cards", "Closed Loan", "Open Credit Cards", "Open Loan"],
+      "data": [4, 1, 6, 2],
+      "colors": ["#7E79DD", "#FDE866", "#99DBEA", "#67D995"]
+    },
+    "open": {
+      "labels": ["Open Credit Cards", "Open Loan"],
+      "data": [6, 2],
+      "colors": ["#99DBEA", "#67D995"]
+    },
+    "close": {
+      "labels": ["Closed Credit Cards", "Closed Loan"],
+      "data": [4, 1],
+      "colors": ["#7E79DD", "#FDE866"]
+    }
+  },
+  "history": {
+    "Jan": { "label": "JAN", "data": 0 },
+    "Feb": { "label": "FEB", "data": 0 },
+    "Mar": { "label": "MAR", "data": 0 },
+    "Apr": { "label": "APR", "data": 520 },
+    "May": { "label": "MAY", "data": 580 },
+    "Jun": { "label": "JUN", "data": 493 },
+    "Jul": { "label": "JUL", "data": 0 },
+    "Aug": { "label": "AUG", "data": 510 },
+    "Sep": { "label": "SEP", "data": 0 },
+    "Oct": { "label": "OCT", "data": 0 },
+    "Nov": { "label": "NOV", "data": 0 },
+    "Dec": { "label": "DEC", "data": 0 }
+  },
+  "scoreRange": [
+    { "color": "#E15825", "percentage": 15, "range": { "from": 300, "to": 722 } },
+    { "color": "#F18200", "percentage": 22, "range": { "from": 723, "to": 747 } },
+    { "color": "#FCD800", "percentage": 26, "range": { "from": 748, "to": 764 } },
+    { "color": "#A9D161", "percentage": 18, "range": { "from": 765, "to": 777 } },
+    { "color": "#009900", "percentage": 20, "range": { "from": 778, "to": 900 } }
+  ],
+  "nbScore": 767
+}
